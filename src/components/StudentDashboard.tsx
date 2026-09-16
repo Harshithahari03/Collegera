@@ -37,7 +37,7 @@ export default function StudentDashboard({ user }: StudentDashboardProps) {
       try {
         setLoading(true);
         // Load attendance metrics
-        const token = localStorage.getItem('attendease_token');
+        const token = localStorage.getItem('collegera_token');
         const response = await fetch(`/api/stats/student/${user.id}`, {
           headers: {
             'Authorization': `Bearer ${token}`

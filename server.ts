@@ -677,13 +677,13 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[AttendEase] Server listening successfully on http://0.0.0.0:${PORT}`);
+    console.log(`[Collegera] Server listening successfully on http://0.0.0.0:${PORT}`);
   });
 }
 
 // Global Exception handler
 process.on('uncaughtException', (err) => {
-  console.error('[AttendEase] Uncaught exception error caught:', err);
+  console.error('[Collegera] Uncaught exception error caught:', err);
 });
 
 startServer();

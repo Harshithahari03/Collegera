@@ -44,8 +44,8 @@ export default function Login({ onLoginSuccess, theme, onToggleTheme }: LoginPro
       }
 
       // Store in localStorage for session preservation
-      localStorage.setItem('attendease_token', data.token);
-      localStorage.setItem('attendease_user', JSON.stringify(data.user));
+      localStorage.setItem('collegera_token', data.token);
+      localStorage.setItem('collegera_user', JSON.stringify(data.user));
       
       onLoginSuccess(data.token, data.user);
     } catch (err: any) {
@@ -80,7 +80,7 @@ export default function Login({ onLoginSuccess, theme, onToggleTheme }: LoginPro
             <GraduationCap className="w-8 h-8" />
           </div>
           <span className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-indigo-950 to-indigo-850 bg-clip-text text-transparent">
-            AttendEase
+            Collegera
           </span>
         </div>
         <h2 className="mt-4 text-center text-sm font-medium text-slate-500">

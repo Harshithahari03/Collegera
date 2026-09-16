@@ -57,7 +57,7 @@ export default function FacultyDashboard({ user }: FacultyDashboardProps) {
   const reloadAllData = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem('attendease_token');
+      const token = localStorage.getItem('collegera_token');
 
       // 1. Fetch Faculty Stats & info
       const statsResponse = await fetch(`/api/stats/faculty/${user.id}`, {

@@ -1,5 +1,5 @@
 {
-  "name": "AttendEase",
+  "name": "Collegera",
   "description": "College Attendance Management System with role-based access for Students, Faculty, and Administrators.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

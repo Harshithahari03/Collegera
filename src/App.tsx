@@ -16,7 +16,7 @@ export default function App() {
   const [user, setUser] = useState<User | null>(null);
   const [initializing, setInitializing] = useState(true);
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    return (localStorage.getItem('attendease_theme') as 'light' | 'dark') || 'light';
+    return (localStorage.getItem('collegera_theme') as 'light' | 'dark') || 'light';
   });
 
   // Sync theme with document class list
@@ -26,7 +26,7 @@ export default function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem('attendease_theme', theme);
+    localStorage.setItem('collegera_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -36,8 +36,8 @@ export default function App() {
   // Auto-restore authorization token on reload
   useEffect(() => {
     async function restoreSession() {
-      const storedToken = localStorage.getItem('attendease_token');
-      const storedUser = localStorage.getItem('attendease_user');
+      const storedToken = localStorage.getItem('collegera_token');
+      const storedUser = localStorage.getItem('collegera_user');
 
       if (storedToken && storedUser) {
         try {
@@ -53,11 +53,11 @@ export default function App() {
             setToken(storedToken);
             setUser(freshUser);
             // Sync stored profile
-            localStorage.setItem('attendease_user', JSON.stringify(freshUser));
+            localStorage.setItem('collegera_user', JSON.stringify(freshUser));
           } else {
             // Token expired or invalid
-            localStorage.removeItem('attendease_token');
-            localStorage.removeItem('attendease_user');
+            localStorage.removeItem('collegera_token');
+            localStorage.removeItem('collegera_user');
           }
         } catch (err) {
           console.error('Session restoral connection exception:', err);
@@ -78,8 +78,8 @@ export default function App() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('attendease_token');
-    localStorage.removeItem('attendease_user');
+    localStorage.removeItem('collegera_token');
+    localStorage.removeItem('collegera_user');
     setToken(null);
     setUser(null);
   };
@@ -93,7 +93,7 @@ export default function App() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
           </svg>
         </div>
-        <h1 className="text-xl font-black text-slate-800 tracking-tight">AttendEase Systems</h1>
+        <h1 className="text-xl font-black text-slate-800 tracking-tight">Collegera Systems</h1>
         <p className="text-xs text-slate-400 font-semibold mt-1">Establishing secure campus channel connection...</p>
       </div>
     );

@@ -71,7 +71,7 @@ export default function DashboardLayout({ user, onLogout, theme, onToggleTheme, 
             <div>
               <div className="flex items-center space-x-2">
                 <span className="text-xl font-extrabold tracking-tight text-slate-800">
-                  AttendEase
+                  Collegera
                 </span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${style.accent}`}>
                   {style.lbl}
@@ -146,7 +146,7 @@ export default function DashboardLayout({ user, onLogout, theme, onToggleTheme, 
       {/* Campus Footer */}
       <footer className="bg-white border-t border-slate-100 py-6 mt-12 text-center text-xs text-slate-400 font-medium">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 Academic Workspace. AttendEase Attendance System. All rights reserved.</p>
+          <p>© 2026 Academic Workspace. Collegera Attendance System. All rights reserved.</p>
           <div className="flex items-center space-x-1.5 font-mono">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
             <span className="text-slate-500">Service Node Online</span>

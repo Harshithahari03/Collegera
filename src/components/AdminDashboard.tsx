@@ -60,7 +60,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
   const reloadData = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem('attendease_token');
+      const token = localStorage.getItem('collegera_token');
 
       // Fetch Reporting summary
       const statsRes = await fetch('/api/stats/admin', {
