@@ -1,6 +1,6 @@
-# AttendEase 🎓
+# Collegera 🎓
 
-AttendEase is a comprehensive, full-stack college attendance management system designed to streamline the tracking and reporting of student attendance for administrators, faculty, and students.
+Collegera is a comprehensive, full-stack college attendance management system designed to streamline the tracking and reporting of student attendance for administrators, faculty, and students.
 
 ## ✨ Features
 
