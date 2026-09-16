@@ -19,7 +19,7 @@ import {
   SubjectAttendanceStats
 } from './src/types';
 
-const app = express();
+export const app = express();
 const PORT = 3000;
 const DB_FILE = path.join(process.cwd(), 'db.json');
 
@@ -661,7 +661,7 @@ app.get('/api/stats/admin', (req, res) => {
 });
 
 // Vite Setup: Asset pipeline integration
-async function startServer() {
+export async function startServer() {
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -686,4 +686,6 @@ process.on('uncaughtException', (err) => {
   console.error('[Collegera] Uncaught exception error caught:', err);
 });
 
-startServer();
+if (!process.env.VERCEL) {
+  startServer();
+}

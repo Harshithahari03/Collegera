@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, Lock, User as UserIcon, ArrowRight, Shield, BookOpen, AlertCircle, Sun, Moon } from 'lucide-react';
+import { User } from '../types';
 
 interface LoginProps {
   onLoginSuccess: (token: string, user: any) => void;
@@ -38,7 +39,15 @@ export default function Login({ onLoginSuccess, theme, onToggleTheme }: LoginPro
         body: JSON.stringify({ username: loginUser.trim(), password })
       });
 
-      const data = await response.json();
+      const responseText = await response.text();
+      let data: { token?: string; user?: User; error?: string } = {};
+
+      try {
+        data = JSON.parse(responseText);
+      } catch {
+        throw new Error(`Authentication request failed (${response.status})`);
+      }
+
       if (!response.ok) {
         throw new Error(data.error || 'Authentication failed');
       }
